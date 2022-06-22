@@ -1,0 +1,67 @@
+# =======================================================================
+# mock-service Service Properties
+# =======================================================================
+build.number=20
+build.date=Thu Aug 19 15:16:45 IST 2021
+# =======================================================================
+# Service Name & API Details -  Version, Path
+# =======================================================================
+service.name=Mock
+service.org=metamagic
+service.api.prefix=api
+service.api.version=v1
+service.api.name=mock-service
+service.api.repository=https://github.com/MetaArivu/mock-${service.api.name}
+service.api.path=/${service.api.prefix}/${service.api.version}/${service.api.name}
+service.url=http://www.metarivu.com/
+# =======================================================================
+# Microservice Server Properties
+# =======================================================================
+server.port=9090
+server.version=0.1.0
+server.restart=true
+#logging.level=INFO
+spring.codec.max-in-memory-size=3MB
+token.key=sigmaEpsilon6109871597
+app.property.list=element1, element2, element3
+app.property.map={key1:'val1', key2 : 'val2', key3 : 'val3'}
+# =======================================================================
+# External Remote Server Properties 
+# =======================================================================
+payment.gateway.host=127.0.0.1
+payment.gateway.port=8080
+remote.host=127.0.0.1
+remote.port=8080
+remote.protocol=http
+# =======================================================================
+# Open API Properties
+# For More Info: https://springdoc.org/#Introduction
+# =======================================================================
+springdoc.api-docs.path=${service.api.path}/
+springdoc.swagger-ui.path=${service.api.path}/swagger-ui.html
+# Disabling the /v3/api-docs enpoint
+springdoc.api-docs.enabled=true
+# Disabling the swagger-ui
+#springdoc.swagger-ui.enabled=true
+springdoc.swagger-ui.operationsSorter=method
+#For sorting tags alphabetically
+springdoc.swagger-ui.tagsSorter=alpha
+springdoc.show-actuator=true
+
+# Packages to include
+# springdoc.packagesToScan=io.fusion.water, io.fusion.fire
+# Paths to include
+# springdoc.pathsToMatch=/v1, /api/health/**
+# To expose the swagger-ui, on the management port
+#springdoc.use-management-port=true
+# This property enables the openapi and swaggerui endpoints to be exposed 
+# beneath the actuator base path.
+# management.endpoints.web.exposure.include=openapi, swaggerui
+# =======================================================================
+# Mongo Properties 
+# =======================================================================
+spring.data.mongodb.uri=mongodb://localhost:27017/orderdb
+# =======================================================================
+# Mongock Properties 
+# =======================================================================
+mongock.change-logs-scan-package=io.fusion.water.order.adapters
